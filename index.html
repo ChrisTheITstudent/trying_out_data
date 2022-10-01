@@ -5,19 +5,24 @@
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
+    <h1>Care App</h1>
+    <h2>Login</h2>
+<!-- buttons for logging in -->
     <button type="button"
             name="family-btn"
             id="family-btn">Family</button>
     <button type="button"
             name="educator-btn"
             id="educator-btn">Educator</button>
+    <p>Create a new account</p>
+<!-- log in forms -->
     <div class="family-form"
           id="family">
       <form action="index.html" method="post">
         <label for="family-name">Family name:</label>
         <input type="text" id="family-name" name="family-name" value="">
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" value="">
+        <label for="family-password">Password:</label>
+        <input type="family-password" id="family-password" name="family-password" value="">
       </form>
     </div>
     <div class="educator-form"
@@ -25,16 +30,14 @@
       <form action="index.html" method="post">
         <label for="educator-name">Name:</label>
         <input type="text" id="educator-name" name="educator-name" value="">
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" value="">
+        <label for="educator-password">Password:</label>
+        <input type="educator-password" id="educator-password" name="educator-password" value="">
       </form>
-    </div>
 
     <div id="tester-data">
 
     </div>
-
-    <!-- JavaScript -->
+<!-- JavaScript -->
     <script src="JavaScript/script.js"></script>
   </body>
 </html>

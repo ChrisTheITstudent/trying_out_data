@@ -54,10 +54,12 @@ function educatorBtnClicked() {
 }
 function sendDataRequest(elementId) {
   const dataRequest = new XMLHttpRequest();
+  // response.setHeader("Access-Control-Allow-Origin", "*");
   dataRequest.onload = function(){
-    elementId.innerHTML = this.responseText;
+     obj = JSON.parse(this.responseText);
+     elementId.innerHTML = obj.familyName;
   }
-  dataRequest.open("GET", "familyData.json");
+  dataRequest.open("GET", "JavaScript/familyData.json");
   dataRequest.send();
 }
 
@@ -65,6 +67,11 @@ function sendDataRequest(elementId) {
 familyLoginBtn.addEventListener("click", familyBtnClicked)
 // // When an educator is selected, show educator login
 educatorLoginBtn.addEventListener("click", educatorBtnClicked)
-// get children's variable values
-// make into an object
+
 sendDataRequest(testDataEl)
+
+// Make create family option
+// save the object in the JSON file
+
+// Search familyName that coresponds to the login for the family's name
+// return the family object
