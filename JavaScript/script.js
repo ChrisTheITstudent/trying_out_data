@@ -52,6 +52,14 @@ function familyBtnClicked() {
 function educatorBtnClicked() {
   document.getElementById("educator").style.display="block";
 }
+function sendDataRequest(elementId) {
+  const dataRequest = new XMLHttpRequest();
+  dataRequest.onload = function(){
+    elementId.innerHTML = this.responseText;
+  }
+  dataRequest.open("GET", "familyData.json");
+  dataRequest.send();
+}
 
 // When a family is selected, show family login
 familyLoginBtn.addEventListener("click", familyBtnClicked)
@@ -59,4 +67,4 @@ familyLoginBtn.addEventListener("click", familyBtnClicked)
 educatorLoginBtn.addEventListener("click", educatorBtnClicked)
 // get children's variable values
 // make into an object
-getData("familyData.json", testDataEl)
+sendDataRequest(testDataEl)
