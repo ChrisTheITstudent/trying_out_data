@@ -1,6 +1,182 @@
-.educator-form {
-  display: none;
+/* Google fonts */
+/* font-family: 'Barlow', sans-serif; */
+/* font-family: 'Source Sans Pro', sans-serif; */
+/* colour scheme */
+:root {
+  --background: #A09CA4;
+  --shadows: #7F796F;
+  --lightaccent: #433C44;
+  --darkaccent: #D7492D;
+  --outline: #DEBE22;
 }
+/* general styling */
+html {
+  font-size: 16px;
+}
+body {
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-color: var(--background);
+  margin: 0;
+}
+/* -------------------typeography------------------- */
+h1 {
+  margin: 0;
+  font-family: 'Barlow', sans-serif;
+  font-size: 2em;
+}
+p {
+  font-size: 1.5em;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+a {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 1.5em;
+  color: green;
+}
+a:hover,
+a:focus {
+  color: var(--darkaccent);
+}
+/* ---------------------layout---------------------- */
+/* general */
+
+/* coloums */
+.col1 {
+  width: 10%;
+}
+.col2 {
+  width: 20%;
+}
+.col3 {
+  width: 30%;
+}
+.col4 {
+  width: 40%;
+}
+.col5 {
+  width: 50%;
+}
+.col6 {
+  width: 60%;
+}
+.col7 {
+  width: 70%;
+}
+.col8 {
+  width: 80%;
+}
+.col9 {
+  width: 90%;
+}
+.col10 {
+  width: 100%;
+}
+/* *********Homepage********* */
+/* homepage banner */
+.hero-container {
+  width: 100vw;
+  height: 20vh;
+  background-size: 100% 150%;
+  background-position: left top;
+  background-repeat: no-repeat;
+  background-image: url(images/hero-image.png);
+  display: flex;
+}
+.header-logo {
+  height: 75%;
+  width: auto;
+}
+.header-title {
+  width: auto;
+  height: 100%;
+  padding-top: 3em;
+  text-align: center;
+
+}
+/* login */
+.login {
+  height: auto;
+  width: 100%;
+  font-size: 5em;
+  text-align: center;
+}
+/* buttons */
+.button-container {
+  height: auto;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn {
+  width: 30em;
+  padding: 3em;
+  margin: 1em;
+  font-size: 1.5em;
+  color: white;
+  background-color: var(--lightaccent);
+  border: 1em var(--outline) solid;
+  border-radius: 5px;
+  box-shadow: 1em 1em 1em var(--shadows);
+}
+.btn:hover {
+  color: black;
+  box-shadow: none;
+  background-color: var(--darkaccent);
+  border-color: var(--lightaccent);
+  cursor: pointer;
+}
+/* forms */
+label,
+input,
+select {
+  margin: 0.25em;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 1.5em;
+}
+label {
+  color: white;
+}
+.educator-form h1,
+.family-form h1 {
+  margin: 0.25em auto 1em auto;
+}
+.educator-form,
 .family-form {
   display: none;
+  flex-direction: column;
+  width: 70%;
+  height: auto;
+  justify-content: center;
+  align-items: center;
+  margin: 1em auto 1em auto;
+  padding: 1em 1em 3em 1em;
+  color: white;
+  background-color: var(--lightaccent);
+  border: 0.5em var(--outline) ridge;
+  border-radius: 5px;
+}
+.new-family-form h1,
+.new-child-form h1,
+.new-child-form p {
+  color: white;
+  text-align: center;
+}
+.new-family-form,
+.new-child-form {
+  text-align: left;
+  width: 50%;
+  margin: 2em auto 1em auto;
+  padding: 1em;
+  border: 0.5em var(--outline) outset;
+  border-radius: 5px;
+  background-color: var(--lightaccent);
+}
+.new-child-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }

@@ -2,40 +2,64 @@
 <html>
   <head>
     <title></title>
+  <!-- css stylesheet -->
     <link rel="stylesheet" href="css/style.css">
+  <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500&family=Source+Sans+Pro:ital,wght@0,400;0,900;1,400&display=swap" rel="stylesheet">
   </head>
+  <header>
+<!-- hero image -->
+    <div class="hero-container">
+      <img src="images/care-central.png" alt="care central" class="hero-logo">
+<!-- title -->
+        <img src="images/hero-title.png" alt="care central title" class="hero-title">
+    </div>
+    
+  </header>
   <body>
-    <h1>Care App</h1>
-    <h2>Login</h2>
+    <div id="buttons">
+      <div class="login">
+        <h1>Select Login</h1>
+      </div>
+
 <!-- buttons for logging in -->
-    <button type="button"
-            name="family-btn"
-            id="family-btn">Family</button>
-    <button type="button"
-            name="educator-btn"
-            id="educator-btn">Educator</button>
-    <p>Create a new account</p>
+      <div class="button-container">
+        <button type="button"
+                name="family-btn"
+                id="family-btn"
+                class="btn">Family</button>
+        <button type="button"
+                name="educator-btn"
+                id="educator-btn"
+                class="btn">Educator</button>     
+        </div>
+        <div class="button-container">
+          <a href="new-family.html">Create new account</a>
+        </div>
+    </div>
 <!-- log in forms -->
-    <div class="family-form"
-          id="family">
-      <form action="index.html" method="post">
-        <label for="family-name">Family name:</label>
-        <input type="text" id="family-name" name="family-name" value="">
-        <label for="family-password">Password:</label>
-        <input type="family-password" id="family-password" name="family-password" value="">
+    <div class="family-form" id="family">
+      <h1>Family Login</h1>
+      <form action="Server-stuff (PHP)/family-login.php" method="post">
+        <label for="family-name">Family name:</label><br>
+        <input type="text" id="family-name" name="family-name" value=""><br>
+        <label for="family-password">Password:</label><br>
+        <input type="password" id="family-password" name="family-password" value=""><br>
+        <input type="submit">
       </form>
     </div>
     <div class="educator-form"
           id="educator">
-      <form action="index.html" method="post">
-        <label for="educator-name">Name:</label>
-        <input type="text" id="educator-name" name="educator-name" value="">
-        <label for="educator-password">Password:</label>
-        <input type="educator-password" id="educator-password" name="educator-password" value="">
+      <h1>Educator Login</h1>
+      <form action="Server-stuff (PHP)/start.php" method="post">
+        <label for="educator-name">Name:</label><br>
+        <input type="text" id="educator-name" name="educator-name" value=""><br>
+        <label for="educator-password">Password:</label><br>
+        <input type="password" id="educator-password" name="educator-password" value=""><br>
+        <input type="submit" name="" id="">
       </form>
-
-    <div id="tester-data">
-
     </div>
 <!-- JavaScript -->
     <script src="JavaScript/script.js"></script>

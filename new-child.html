@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+    <!-- css stylesheet -->
+        <link rel="stylesheet" href="css/style.css">
+    <!-- Google fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500&family=Source+Sans+Pro:ital,wght@0,400;0,900;1,400&display=swap" rel="stylesheet">
+    </head>
+    <header>
+        <!-- hero image -->
+        <div class="hero-container">
+            <img src="images/care-central.png" alt="care central" class="hero-logo">
+        <!-- title -->
+            <img src="images/hero-title.png" alt="care central title" class="hero-title">
+          </div>
+    </header>
+    <body>
+        <div class="new-child-form">
+            <h1>Child Details</h1>
+            <form name="new-child-form" action="Server-stuff (PHP)/create-child.php" method="post">
+                <label for="firstName">Child's first name: </label><br>
+                <input type="text" name="firstName" id="firstName"><br>
+                <label for="lastName">Child's last name: </label><br>
+                <input type="text" name="lastName" id="lastName"><br>
+                <label for="age">Child's age in months: </label><br>
+                <input type="number" name="age" id="age"><br>
+                <label for="family-name">Family name (exactly as entered previously): </label><br>
+                <input type="text" name="family-name" id="family-name"><br>
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+    </body>
+</html>

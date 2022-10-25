@@ -1,3 +1,5 @@
+
+// Class for creating familys
 class Family {
   constructor(familyName, password, childFirstName, childSecondName, childAge) {
     this.familyName = familyName;
@@ -15,7 +17,7 @@ class Family {
     }
   }
 }
-
+// Class for creating educators
 class Educator {
   constructor(educatorName, password, educatorRole, workingStatus) {
     this.role = "educator";
@@ -25,13 +27,21 @@ class Educator {
     this.workingStatus = workingStatus
   }
 }
-
+// HTML element declarations
 const educatorLoginBtn = document.getElementById('educator-btn');
 const familyLoginBtn = document.getElementById('family-btn');
 const educatorLoginForm = document.getElementById('educator-form');
 const familyLoginForm = document.getElementById('family-form');
-const testDataEl = document.getElementById('tester-data');
+const btnsEl = document.getElementById('buttons')
+const createAccountEl = document.getElementById('create-account')
+const submitAccountInfoEl = document.getElementById('submit-chd')
+const noOfChildrenEl = document.getElementById('no-of-children')
+const childForm = document.getElementById('repeat-form')
 
+// document.getElementById("new-chd-form").style.display = "block";
+//   document.getElementById("new-account").style.display = "none";
+
+// This function validates the educator login form
 function validateEducatorLogin(element) {
   let validate = document.forms["educator-form"]["name"].value;
   if (validate == "") {
@@ -39,6 +49,7 @@ function validateEducatorLogin(element) {
     return false;
   }
 }
+// This function validates the family login form
 function validateFamilyLogin(element) {
   let validate = document.forms["family-form"]["familyname"].value;
   if (validate == "") {
@@ -46,32 +57,41 @@ function validateFamilyLogin(element) {
     return false;
   }
 }
+// This function displays the family login form when the family button clicked
+// and hides the buttons
 function familyBtnClicked() {
-  document.getElementById("family").style.display="block";
+  document.getElementById("family").style.display = "flex";
+  document.getElementById("buttons").style.display = "none";
 }
+// This function displays the educator login form when the educator button is clicked
+// and hides the buttons
 function educatorBtnClicked() {
-  document.getElementById("educator").style.display="block";
+  document.getElementById("educator").style.display = "flex";
+  document.getElementById("buttons").style.display = "none";
 }
-function sendDataRequest(elementId) {
-  const dataRequest = new XMLHttpRequest();
-  // response.setHeader("Access-Control-Allow-Origin", "*");
-  dataRequest.onload = function(){
-     obj = JSON.parse(this.responseText);
-     elementId.innerHTML = obj.familyName;
-  }
-  dataRequest.open("GET", "JavaScript/familyData.json");
-  dataRequest.send();
+// ----These functions deal with data----
+// This function triggers the children's forms and hides the family form
+// ####Change this so it listens for change in the dropdown selection####
+function createFamilyAccount() {
+  let target = document.forms["new-family"]["no-of-children"].value;  
+}
+// This function submits the new family account information
+function submitFamilyAccount(object) {
+  const xhttp = new XMLHttpRequest();
+  xhttp.open("POST", "Server-stuff(PHP)/start.php");
+  xhttp.send(object);
+  xhttp.close();
 }
 
-// When a family is selected, show family login
+// ----Event listeners----
+// Adds an event listener to the family login button
 familyLoginBtn.addEventListener("click", familyBtnClicked)
-// // When an educator is selected, show educator login
+
+// Adds an event listener to the educator login button
 educatorLoginBtn.addEventListener("click", educatorBtnClicked)
 
-sendDataRequest(testDataEl)
-
-// Make create family option
-// save the object in the JSON file
+// Adds an event listener to the family creation submit button
+createAccountEl.addEventListener("submit", createFamilyAccount)
 
 // Search familyName that coresponds to the login for the family's name
 // return the family object

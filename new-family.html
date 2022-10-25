@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+    <!-- css stylesheet -->
+        <link rel="stylesheet" href="css/style.css">
+    <!-- Google fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500&family=Source+Sans+Pro:ital,wght@0,400;0,900;1,400&display=swap" rel="stylesheet">
+    </head>
+    <header>
+    <!-- hero image -->
+    <div class="hero-container">
+        <img src="images/care-central.png" alt="care central" class="hero-logo">
+    <!-- title -->
+        <img src="images/hero-title.png" alt="care central title" class="hero-title">
+      </div>
+    </header>
+    <body>
+        <div class="new-family-form" id="new-account">
+            <h1>Create an account</h1>
+            <form name="new-family" action="Server-stuff (PHP)/create-family.php" method="post" id="create-account">
+                <label for="family-name">Family Name: </label><br>
+                <input type="text" name="family-name" id="family-name"><br>
+                <label for="family-password">Set Password: </label><br>
+                <input type="text" name="family-password" id="family-password"><br>
+                <label for="no-of-children">How many children in the family: </label><br>
+                <select name="no-of-children" id="no-of-children">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                </select><br>
+                <input type="submit">
+            </form>
+        </div>
+    </body>
